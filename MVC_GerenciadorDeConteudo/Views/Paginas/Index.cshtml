@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Paginas";
+    List<Business.Pagina> paginas = ViewBag.Paginas;
+}
+
+<div>
+    <h3>Paginas</h3>
+    <div>
+        <a href="/paginas/novo" class="btn btn-default">Nova pagina</a>
+    </div>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in paginas)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nome</td>
+                    <td>@p.Data.ToString("dd/MM/yyyy")</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

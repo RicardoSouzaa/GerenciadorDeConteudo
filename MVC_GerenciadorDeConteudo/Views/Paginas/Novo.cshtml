@@ -1,0 +1,22 @@
+﻿
+<div class="jumbotron">
+    <h3>Nova Pagina</h3>
+    <div>
+        <a href="/paginas" class="btn btn-default">Voltar</a>
+    </div>
+    <form action="/paginas/criar" method="post">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da página" />
+        </div>
+        <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="datetime" class="form-control" id="data" name="data" placeholder="Digite a data de criação" />
+        </div>
+        <div class="form-group">
+            <label for="conteudo">Conteudo:</label>
+            <textarea type="text" class="form-control" id="conteudo" name="conteudo"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Criar Pagina</button>
+    </form>
+</div>
