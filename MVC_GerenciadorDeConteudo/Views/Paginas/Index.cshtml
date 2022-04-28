@@ -1,7 +1,17 @@
 ﻿@{
+
     ViewBag.Title = "Paginas";
     List<Business.Pagina> paginas = ViewBag.Paginas;
 }
+
+@if (TempData["sucesso"] != null)
+    {
+        <div class="alert alert-success">@TempData["sucesso"]</div>
+    }
+@if (TempData["erro"] != null)
+    {
+        <div class="alert alert-danger">@TempData["erro"]</div>
+    }
 
 <div>
     <h3>Paginas</h3>
@@ -14,6 +24,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Data</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +34,11 @@
                     <td>@p.Id</td>
                     <td>@p.Nome</td>
                     <td>@p.Data.ToString("dd/MM/yyyy")</td>
+                    <td><a href="/Paginas/Editar/@p.Id">Alterar Página</a></td>
                 </tr>
 
             }
         </tbody>
     </table>
 </div>
+<p>testeeeeeeeeeeeeeeeeeeeeeeeeee</p>

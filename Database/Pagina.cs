@@ -50,5 +50,26 @@ namespace Database
                 command.ExecuteNonQuery();
             }
         }
+
+        public DataTable BuscaPorId(int id)
+        {
+            {
+                using (SqlConnection connection = new SqlConnection(SqlConn()))
+                {
+                    string queryString = "select * from paginas where id=" + id;
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    command.Connection.Open();
+
+                    SqlDataAdapter adapter = new SqlDataAdapter
+                    {
+                        SelectCommand = command
+                    };
+
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    return table;
+                }
+            }
+        }
     }
 }
