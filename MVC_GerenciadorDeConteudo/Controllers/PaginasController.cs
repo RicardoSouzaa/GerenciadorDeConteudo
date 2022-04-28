@@ -21,6 +21,12 @@ namespace MVC_GerenciadorDeConteudo.Controllers
             return View();
         }
 
+        public void Editar(int id)
+        {
+            var pagina = Pagina.BuscaPorId(id);
+            ViewBag.Pagina = pagina;
+        }
+
         [HttpPost]
         public void Criar()
         {
