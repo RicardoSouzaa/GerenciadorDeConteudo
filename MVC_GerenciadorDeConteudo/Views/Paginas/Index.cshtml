@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Data</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                     <td>@p.Id</td>
                     <td>@p.Nome</td>
                     <td>@p.Data.ToString("dd/MM/yyyy")</td>
+                    <td><a href="/paginas/@p.Id/editar">Alterar Página</a></td>
                 </tr>
 
             }
