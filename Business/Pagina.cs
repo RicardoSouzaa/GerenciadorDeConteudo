@@ -47,7 +47,7 @@ namespace Business
                 pagina.Nome = row["nome"].ToString();
                 pagina.Conteudo = row["conteudo"].ToString();
                 pagina.Data = Convert.ToDateTime(row["data"]);
-            };
+            }
             return pagina;
         }
 

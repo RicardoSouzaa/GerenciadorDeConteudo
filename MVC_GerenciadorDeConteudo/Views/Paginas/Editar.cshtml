@@ -1,0 +1,22 @@
+﻿
+<div class="jumbotron">
+    <h3>Editar Pagina</h3>
+    <div>
+        <a href="/paginas" class="btn btn-default">Voltar</a>
+    </div>
+    <form action="/paginas/Alterar/@ViewBag.Pagina.Id" method="post">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da página" value="@ViewBag.Pagina.Nome" />
+        </div>
+        <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="datetime" class="form-control" id="data" name="data" placeholder="Digite a data de criação" value="@ViewBag.Pagina.Data" />
+        </div>
+        <div class="form-group">
+            <label for="conteudo">Conteudo:</label>
+            <textarea type="text" class="form-control" id="conteudo" name="conteudo">@ViewBag.Pagina.Conteudo</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Alterar Pagina</button>
+    </form>
+</div>

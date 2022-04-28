@@ -39,8 +39,14 @@ namespace MVC_GerenciadorDeConteudo
 
             routes.MapRoute(
                 "paginas_editar",
-                "paginas/:id/editar",
-                new { Controller = "Paginas", Action = "Editar", id = 0 }
+                "paginas/editar/{id}",
+                new { Controller = "Paginas", Action = "Editar", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                "paginas_alterar",
+                "paginas/alterar/{id}",
+                new { Controller = "Paginas", Action = "Alterar", id = UrlParameter.Optional }
             );
         }
     }
