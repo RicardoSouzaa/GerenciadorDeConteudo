@@ -33,6 +33,12 @@ namespace MVC_GerenciadorDeConteudo.Controllers
             Response.Redirect("/paginas");
         }
 
+        public void Excluir(int id)
+        {
+            Pagina.Excluir(id);
+            Response.Redirect("/paginas");
+        }
+
         public ActionResult Editar(int id)
         {
             var pagina = Pagina.BuscaPorId(id);
@@ -41,7 +47,15 @@ namespace MVC_GerenciadorDeConteudo.Controllers
             return viewResult;
         }
 
+        public ActionResult Visualizar(int id)
+        {
+            var pagina = Pagina.BuscaPorId(id);
+            ViewBag.Pagina = pagina;
+            return View();
+        }
+
         [HttpPost]
+        [ValidateInput(false)]
         public void Alterar(int id)
         {
             try
@@ -57,9 +71,9 @@ namespace MVC_GerenciadorDeConteudo.Controllers
 
                 TempData["sucesso"] = "Página Alterada com Sucesso!";
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                TempData["erro"] = "A pagina não foi alterada.";
+                TempData["erro"] = ($"A pagina não foi alterada. ( {err.Message} ) ");
             }
 
             Response.Redirect("/paginas");

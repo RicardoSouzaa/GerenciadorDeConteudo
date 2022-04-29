@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/validacao.js")
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top" style="background-color:black;">
+        <div class="container">
+            <h1 style="color:#ffffff; padding:10px; text-align:center;">Visualização da Pagina Renderizada</h1>
+        </div>         
+    </div>
+    
+    <div class="container body-content" style="padding:30px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Pagina renderizada</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

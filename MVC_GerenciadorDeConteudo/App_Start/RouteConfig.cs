@@ -48,6 +48,18 @@ namespace MVC_GerenciadorDeConteudo
                 "paginas/alterar/{id}",
                 new { Controller = "Paginas", Action = "Alterar", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               "paginas_excluir",
+               "paginas/excluir/{id}",
+               new { Controller = "Paginas", Action = "Excluir", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+               "paginas_visualizar",
+               "paginas/visualizar/{id}",
+               new { Controller = "Paginas", Action = "Visualizar", id = UrlParameter.Optional }
+           );
         }
     }
 }
